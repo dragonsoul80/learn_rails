@@ -249,6 +249,7 @@ DEPENDENCIES
   compass-rails (= 2.0.4)
   figaro
   gibbon
+  google-api-client (>= 0.7.0)
   google_drive
   high_voltage
   jbuilder (~> 2.0)
