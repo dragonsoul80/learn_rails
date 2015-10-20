@@ -17,32 +17,29 @@ has_no_table
 	#client secret MlVS7wOd3UjYMp5PCiM4rGm9
 	# Authorizes with OAuth and gets an access token.
 	
-		
-	
-
 	def update_spreadsheet
 		#https://github.com/gimite/google-drive-ruby
 		# solved the openssl problem: http://railsapps.github.io/openssl-certificate-verify-failed.html
-		client = Google::APIClient.new
-		auth = client.authorization
-		auth.client_id = "921946829572-rnl43kp6t6s3gprb8enia95irimirpb8.apps.googleusercontent.com"
-		auth.client_secret = "JIxf3Fpp-YdggKy66tvKkOG6"
-		auth.scope = [
- 		 "https://www.googleapis.com/auth/drive",
- 		 "https://spreadsheets.google.com/feeds/"
-		]
-		auth.redirect_uri = "urn:ietf:wg:oauth:2.0:oob"
-		print("1. Open this page:\n%s\n\n" % auth.authorization_uri) 
-		#copy this link to browser then get the code
-		#https://accounts.google.com/o/oauth2/auth?access_type=offline&client_id=921946829572-rnl43kp6t6s3gprb8enia95irimirpb8.apps.googleusercontent.com&redirect_uri=urn:ietf:wg:oauth:2.0:oob&response_type=code&scope=https://www.googleapis.com/auth/drive%20https://spreadsheets.google.com/feeds/
-		print("2. Enter the authorization code shown in the page: ")
-		auth.code = $stdin.gets.chomp
-		auth.fetch_access_token!
-		access_token = auth.access_token
-		#http://stackoverflow.com/questions/26526322/get-token-store-it-refresh-it-if-expired-using-oauth2-gem-in-ruby
 		
-		connection = GoogleDrive.login_with_oauth(auth.access_token)
-		ws = connection.spreadsheet_by_key('1eEfx29Y0e-zkCy8cQZ1Er_j6R8aTOP1fW52-O-mAzZY').worksheets[0]
+		@client = Google::APIClient.new(application_name: 'Learn_Rails', application_version: '0.0.1')
+		key = Google::APIClient::KeyUtils.load_from_pkcs12(ENV['GOOGLE_P12_PATH'], ENV['GOOGLE_P12_PASS'])
+		#https://github.com/gimite/google-drive-ruby/issues/126#issuecomment-73542381
+		#Share your sheets with the Client ID email of the service account ('someeailuser@developer.gserviceaccount.com'). 
+		#Otherwise you won't be able to access anything even though you have a valid token.
+		asserter = Google::APIClient::JWTAsserter.new( ENV['GOOGLE_SERVICE_EMAIL'],
+    		['https://docs.google.com/feeds/',
+    			'https://www.googleapis.com/auth/drive',
+    		 'https://spreadsheets.google.com/feeds/'],
+    		key
+			)
+		@client.authorization = asserter.authorize
+		
+		@connection = GoogleDrive.login_with_oauth(@client.authorization.access_token)
+		ss = @connection.spreadsheet_by_title('Learn_Rails')
+		if ss.nil?
+			ss = @connection.create_spreadsheet('Learn_Rails')
+		end
+		ws = ss.worksheets[0]
 		last_row = 1 + ws.num_rows
 		ws[last_row, 1] = Time.new
 		ws[last_row, 2] = self.name
