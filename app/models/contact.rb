@@ -1,9 +1,9 @@
-	require "google/api_client"
-    require "google_drive"
-class Contact < ActiveRecord::Base
-has_no_table
+require "google/api_client"
+require "google_drive"
 
+class Contact < ActiveRecord::Base
 	
+	has_no_table
 	attr_accessor :name, :string
 	attr_accessor :email, :string
 	attr_accessor :content, :string
