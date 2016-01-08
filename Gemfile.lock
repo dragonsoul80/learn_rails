@@ -76,7 +76,7 @@ GEM
     compass-rails (2.0.4)
       compass (~> 1.0.0)
       sass-rails (<= 5.0.1)
-      sprockets (< 2.13)
+      sprockets (< 2.12.3)
     debug_inspector (0.0.2)
     erubis (2.7.0)
     execjs (2.6.0)
