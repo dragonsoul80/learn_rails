@@ -24,7 +24,6 @@ group :development do
   gem 'web-console', '~> 2.0'
   gem 'rails_layout'
   gem 'sqlite3', '1.3.11'
-  gem 'pg'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
@@ -41,5 +40,6 @@ gem 'google-api-client', '>= 0.7.0'
 
 group :production do
 gem 'rails_12factor'
-gem 'thin'
+gem 'puma', '2.11.1'
+gem 'pg'
 end
