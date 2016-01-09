@@ -4,6 +4,7 @@ gem 'rails', '4.2.4'
 gem 'sass-rails', '5.0.1'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
+gem 'coffee-script-source', '1.8.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jquery-turbolinks'
@@ -12,11 +13,11 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # fix the uninitialized constant Sprockets::SassCacheStore Error on Windows
 gem 'compass-rails', '2.0.4'
 gem 'sprockets', '2.12.3'
-group :development, :test do
-  gem 'byebug'
-  gem 'better_errors'
-  gem 'quiet_assets'
-end
+#group :development, :test do
+ # gem 'byebug'
+  #gem 'better_errors'
+  #gem 'quiet_assets'
+#end
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
