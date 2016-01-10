@@ -252,7 +252,7 @@ DEPENDENCIES
   coffee-script-source (= 1.8.0)
   compass-rails (= 2.0.4)
   figaro
-  foundation-rails
+  foundation-rails (>= 5.0.0)
   gibbon
   google-api-client (>= 0.7.0)
   google_drive (= 1.0.5)

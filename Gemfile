@@ -35,7 +35,7 @@ gem 'gibbon'
 gem 'google_drive', '1.0.5'
 gem 'high_voltage'
 gem 'simple_form'
-gem 'foundation-rails'
+gem 'foundation-rails', '>= 5.0.0'
 gem 'google-api-client', '>= 0.7.0'
 
 group :production do
