@@ -13,19 +13,6 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # fix the uninitialized constant Sprockets::SassCacheStore Error on Windows
 gem 'compass-rails', '2.0.4'
 gem 'sprockets', '2.12.3'
-#group :development, :test do
- # gem 'byebug'
-  #gem 'better_errors'
-  #gem 'quiet_assets'
-#end
-
-group :development do
-  # Access an IRB console on exception pages or by using <%= console %> in views
-  gem 'web-console', '~> 2.0'
-  gem 'rails_layout'
-  gem 'sqlite3', '1.3.11'
-end
-
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # learn-rails
@@ -37,6 +24,22 @@ gem 'high_voltage'
 gem 'simple_form'
 gem 'foundation-rails', '>= 5.0.0'
 gem 'google-api-client', '>= 0.7.0'
+
+group :development, :test do
+  gem 'sqlite3',     '1.3.11'
+  gem 'byebug',      '3.4.0'
+  gem 'web-console', '2.2.1'
+  gem 'spring',      '1.1.3'
+  gem 'rails_layout'
+end
+
+group :test do
+  gem 'minitest-reporters', '1.0.5'
+  gem 'mini_backtrace',     '0.1.3'
+  gem 'guard-minitest',     '2.3.1'
+end
+
+
 
 group :production do
 gem 'rails_12factor'
