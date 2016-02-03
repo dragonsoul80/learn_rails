@@ -22,3 +22,13 @@ http://foundation.zurb.com/forum/posts/1639-link-inside-orbit-content-slider-do-
 
 *MailChimp errors:
 
+II. Tips from https://www.railstutorial.org/book/
+* modeling users:
+$ rails generate controller Users new
+$ rails generate model User name:string email:string
+$ bundle exec rake db:migrate (Create a sqlite database db/development.sqlite3)
+$ bundle exec rake db:rollback (delete database)
+- A validity test
+$ bundle exec rake test:models  <- Cant Run this command in window)
+$ rake test:models  <- must run this
+

@@ -4,8 +4,9 @@ class Visitor < ActiveRecord::Base
 # in Ruby 4.2.2 need to replace column to attr_accessor
 	attr_accessor :email, :string
 	
+	# See another format in app/models/user.rb
 	validates_presence_of :email
-	validates_format_of :email, :with => /\A[-a-z0-9_+\.]+\@([-a-z0-9]+\.)+[a-z0-9]{2,4}\z/i
+	validates_format_of :email, :with => /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
 
 def subscribe
 		
