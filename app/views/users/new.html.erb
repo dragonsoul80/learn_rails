@@ -1,2 +1,52 @@
-<h1>Users#new</h1>
-<p>Find me in app/views/users/new.html.erb</p>
+<% content_for :title do %>Home of Toan Tang<% end %>
+<% content_for :description do %>Website of Toan Tang<% end %>
+
+<section>
+
+<div class="row">
+	<div class="large-12 columns show-for-small">
+		<img src="http://placehold.it/1200x700&text=Mobile Header">
+	</div>
+</div>
+
+<div class="row">
+
+  <div class="large-4 small-5 columns">
+    <%= image_tag("face.jpg", :class => "signup_face_images") %>
+  </div>
+
+  <div class="large-6 columns">
+     <div class="signup-panel">
+      <p class="welcome"> Welcome to this awesome app!</p>
+
+      <%= simple_form_for(@user) do |f| %>
+
+      <%= f.error_notification %>
+      <%= render 'layouts/messages' %>
+
+    <div class="row collapse">
+     <div class="small-2  columns">
+       <span class="prefix"><i class="fi-torso-female"></i></span>
+     </div>
+
+    <div class="small-5 columns">
+      <%= f.input :first_name, placeholder: "First Name", autofocus:true, label: false %>
+    </div>
+
+    <div class="small-5 columns">
+      <%= f.input :last_name, placeholder: "Last Name", label: false %>
+    </div>
+  </div>
+     <%= f.input :email, placeholder: "Email", label: false%>
+     <%= f.input :password, placeholder: "Password", label: false %>
+     <%= f.input :password_confirmation, placeholder: "Password Confirmation", label: false %>
+      <%= f.button :submit, "Create my account", class: "button" %>
+    <% end %>
+
+         <p>Already have an account? <a href="#">Login here &raquo</a></p>
+      </div>
+    </div>
+  </div> 
+ 
+
+</section>

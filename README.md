@@ -56,3 +56,6 @@ has_secure_password
 - password and password_confirmation 
 - An authenticate method that returns the user when the password is correct (and false otherwise)
 rails enforce password strength:
+
+* Byebug gem
+add debugger next to any line of code to track down the bug.

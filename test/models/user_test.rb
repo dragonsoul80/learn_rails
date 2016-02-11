@@ -3,7 +3,7 @@ require 'test_helper'
 class UserTest < ActiveSupport::TestCase
   
   def setup
-    @user = User.new(name: "Example User", email: "user@example.com", password: "jamestang", password_confirmation: "jamestang")
+    @user = User.new(first_name: "Example", last_name:  "User", email: "user@example.com", password: "jamestang", password_confirmation: "jamestang")
   end
 
   test "should be valid" do
@@ -21,7 +21,7 @@ class UserTest < ActiveSupport::TestCase
   end
 
 test "name should not be too long" do
-    @user.name = "a" * 51
+    @user.fullname = "a" * 51
     assert_not @user.valid?
   end
 
@@ -69,5 +69,19 @@ test "password shoudl have minimum length" do
   @user.password = @user.password_confirmation = "a" *5
   assert_not @user.valid?
 end
+
+  test "valid signup information" do
+    get signup_path
+    assert_difference 'User.count', 1 do
+      post_via_redirect users_path, user: { first_name:  "Example",
+                                            last_name: "User",
+                                            email: "user@example.com",
+                                            password:              "password",
+                                            password_confirmation: "password" }
+    end
+    assert_template 'users/show'
+  end
+
+
 
 end

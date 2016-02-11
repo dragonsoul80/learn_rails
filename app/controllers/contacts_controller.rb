@@ -5,7 +5,7 @@ def new
 end
 
 def create
-	@contact = Contact.new(secure_params)
+	@contact = Contact.new(contact_params)
 	if @contact.valid?
 		@contact.update_spreadsheet
 		UserMailer.contact_email(@contact).deliver
@@ -18,7 +18,7 @@ end
 
 	private
 
-	def secure_params
+	def contact_params
 	params.require(:contact).permit(:name, :email, :content)
 	end
 end
