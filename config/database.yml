@@ -83,6 +83,8 @@ test:
 #
 production:
   <<: *default
-  database: d6iduun52m410m
-  username: ppoiftwgoerdvg
-  password: <%= ENV['TOANTANG_DATABASE_PASSWORD'] %>
+  host: localhost
+  port: 5432
+  username: user
+  password: app-dev
+
