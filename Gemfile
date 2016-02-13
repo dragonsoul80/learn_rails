@@ -25,9 +25,9 @@ gem 'high_voltage'
 gem 'simple_form'
 gem 'foundation-rails', '>= 5.0.0'
 gem 'google-api-client', '>= 0.7.0'
+gem 'pg'
 
 group :development, :test do
-  gem 'sqlite3',     '1.3.11'
   gem 'byebug',      '3.4.0'
   gem 'web-console', '2.2.1'
   gem 'spring',      '1.1.3'
@@ -45,5 +45,4 @@ end
 group :production do
 gem 'rails_12factor'
 gem 'puma', '2.11.1'
-gem 'pg'
 end
