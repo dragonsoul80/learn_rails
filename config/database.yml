@@ -83,7 +83,9 @@ test:
 #
 production:
   <<: *default
-  host: localhost
-  username: user
-  password: app-dev
+  host: ec2-54-83-17-9.compute-1.amazonaws.com
+  username: jjfubceaymywvg
+  Port: 5432
+  password: LPWkmVRgW5dzHfNeRFuNn5reDe
+  
 
