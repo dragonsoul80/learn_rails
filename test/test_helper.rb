@@ -9,3 +9,8 @@ class ActiveSupport::TestCase
   ActiveRecord::Migration.maintain_test_schema!
   # Add more helper methods to be used by all tests here...
 end
+
+ # Returns true if a test user is logged in.
+def is_logged_in?
+    !session[:user_id].nil?
+end

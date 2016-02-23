@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 ruby '2.1.5'
 gem 'rails', '4.2.4'
 gem 'bcrypt','3.1.10'
-gem 'sass-rails', '5.0.1'
+gem 'sass-rails'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'coffee-script-source', '1.8.0'
@@ -12,8 +12,8 @@ gem 'jquery-turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 # fix the uninitialized constant Sprockets::SassCacheStore Error on Windows
-gem 'compass-rails', '2.0.4'
-gem 'sprockets', '2.12.3'
+gem 'compass-rails'
+gem 'sprockets-rails'
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # learn-rails
@@ -23,7 +23,7 @@ gem 'gibbon'
 gem 'google_drive', '1.0.5'
 gem 'high_voltage'
 gem 'simple_form'
-gem 'foundation-rails', '>= 5.0.0'
+gem 'bootstrap-sass'
 gem 'google-api-client', '>= 0.7.0'
 gem 'pg'
 

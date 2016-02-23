@@ -1,3 +1,5 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-
+toan:
+  name: Toan Tang
+  email: tangtheson@yahoo.com
+  password_digest: <%= User.digest('password') %>

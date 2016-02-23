@@ -1,11 +1,14 @@
 LearnRails::Application.routes.draw do
-  get 'users/new'
+  	get    'login' => 'sessions#new'
+  	post   'login' => 'sessions#create'
+  	delete 'logout' => 'sessions#destroy'
+  	get    'signup'  => 'users#new'
 
-  	resources :contacts, only: [:new, :create]
+   	resources :contacts, only: [:new, :create]
 	resources :visitors, only: [:new, :create]
 	resources :users
 	resources :about, only: [:new]
-	root to: 'users#new'
+	root to: 'static_pages#home'
 
 	
 end

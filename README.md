@@ -59,3 +59,6 @@ rails enforce password strength:
 
 * Byebug gem
 add debugger next to any line of code to track down the bug.
+
+* Simple Form and Zurb Foundation inline forms:
+https://victorbueno.wordpress.com/2014/01/24/simple-form-and-zurb-foundation-inline-forms/
