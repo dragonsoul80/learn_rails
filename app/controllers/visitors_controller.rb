@@ -3,7 +3,11 @@ class VisitorsController < ApplicationController
 	def new
 		@visitor = Visitor.new
 	end
-	
+
+	def index
+		@visitors = Visitor.all
+	end
+
 	def create
 		@visitor = Visitor.new(secure_params)
 		if @visitor.valid?
@@ -11,7 +15,7 @@ class VisitorsController < ApplicationController
 			flash[:notice] = "Signed up #{@visitor.email}."
 			redirect_to root_path
 		else
-			render :new
+			render :home
 		end
 	end
 

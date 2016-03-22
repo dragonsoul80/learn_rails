@@ -1,6 +1,7 @@
 class StaticPagesController < ApplicationController
 
 def home
-end
+	@visitor = Visitor.new
+	end
 
 end

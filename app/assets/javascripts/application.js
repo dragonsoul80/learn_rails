@@ -14,3 +14,11 @@
 //= require jquery.turbolinks
 //= require jquery_ujs
 //= require bootstrap-sprockets
+// require classie.js
+// require cbpAnimatedHeader.js
+// require jquery.fs.wallpaper.min.js
+// require jquery.easing.1.3.js
+// require jquery.stellar.js
+//= require scrolling.js
+
+

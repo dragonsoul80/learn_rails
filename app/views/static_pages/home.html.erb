@@ -1,12 +1,141 @@
-<div class="center jumbotron">
+<% content_for :title do %>My Resume<% end %>
+<header class="logo-box">
+   <div class="logo"></div>
+   <div class="fore-logo"></div>
   
-	<h1> Welcome to the Sample App</h1>
+</header>
+<section class="content">
+    <article>
+      <h1>ABOUT</h1>
+      <hr>
+      <p>A recent graduate of the B.Sc. In Finance at San Francisco State University, with proven experience in web and database development. Specializes in accomplishing assignments with interpersonal, multitasking and communication skills. Now seeking an intern opportunity to maximize my skills in programming.
+      </p>
+      
+<br>
+    <h1>MY SKILLS</h1>
+<hr>
+<div class="skillbar clearfix " data-percent="70%">
+  <div class="skillbar-title" style="background: #d35400;"><span>English</span></div>
+  <div class="skillbar-bar" style="background: #e67e22;"></div>
+  <div class="skill-bar-percent">70%</div>
+</div> <!-- End Skill Bar -->
 
- 	 <h2>
-   	 This is the home page for the <a href="http://www.railstutorial.org/">Ruby on Rails Tutorial</a>
-     sample application.
-  	</h2>
+<div class="skillbar clearfix " data-percent="90%">
+  <div class="skillbar-title" style="background: #2980b9;"><span>Chinese</span></div>
+  <div class="skillbar-bar" style="background: #3498db;"></div>
+  <div class="skill-bar-percent">90%</div>
+</div> <!-- End Skill Bar -->
 
-  	<%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary center" %>
-  
+<div class="skillbar clearfix " data-percent="98%">
+  <div class="skillbar-title" style="background: #2c3e50;"><span>Vietnamese</span></div>
+  <div class="skillbar-bar" style="background: #2c3e50;"></div>
+  <div class="skill-bar-percent">98%</div>
+</div> <!-- End Skill Bar -->
+
+<div class="skillbar clearfix " data-percent="40%">
+  <div class="skillbar-title" style="background: #46465e;"><span>SQL</span></div>
+  <div class="skillbar-bar" style="background: #5a68a5;"></div>
+  <div class="skill-bar-percent">40%</div>
+</div> <!-- End Skill Bar -->
+
+<div class="skillbar clearfix " data-percent="80%">
+  <div class="skillbar-title" style="background: #333333;"><span>MS Office</span></div>
+  <div class="skillbar-bar" style="background: #525252;"></div>
+  <div class="skill-bar-percent">80%</div>
+</div> <!-- End Skill Bar -->
+
+<div class="skillbar clearfix " data-percent="50%">
+  <div class="skillbar-title" style="background: #27ae60;"><span>RubyOnRails</span></div>
+  <div class="skillbar-bar" style="background: #2ecc71;"></div>
+  <div class="skill-bar-percent">50%</div>
+</div> <!-- End Skill Bar -->
+
+<div class="skillbar clearfix " data-percent="60%">
+  <div class="skillbar-title" style="background: #124e8c;"><span>Modeling</span></div>
+  <div class="skillbar-bar" style="background: #4288d0;"></div>
+  <div class="skill-bar-percent">60%</div>
+</div> <!-- End Skill Bar -->
+
+<div class="row portfolio-posts">
+  <h1> PORTFOLIO </h1>
+  <hr>
+    <div class="col-md-3 post-1">
+      <h5>Database Development </h5>
+      <%= image_tag('network-database-icons.png') %>
+      <p> Create database management program with MS Access.</p>
+      <%= link_to "Explore More", root_path, class: 'btn btn-secondary btn-sm' %>
+    </div>
+
+    <div class="col-md-3 post-2">
+      <h5>Web Development Ruby on Rails  </h5>
+      <%= image_tag('RubyOnRails.png') %>
+      <p> Combine PostgreSQL, Jquery, APIs for web development.</p>
+      <%= link_to "Explore More", root_path, class: 'btn btn-secondary btn-sm' %>
+    </div>
+    
+    <div class="col-md-3 post-3">
+      <h5>Financial Modeling </h5>
+      <%= image_tag('financial-growth-icon.jpg') %>
+      <br><br>
+      <p>Utilize MS Excel functions and tools for financial modeling.</p>
+      <%= link_to "Explore More", root_path, class: 'btn btn-secondary btn-sm' %>
+    </div>      
+
 </div>
+
+
+<div class="row interest">
+    <h1>INTERESTS & HOBBY</h1>
+    <hr>
+    <figure class="col-sm-3">
+       <%= image_tag("travel-icon.png") %>
+       <figcaption>Yes, I love to travel</figcaption>
+    </figure>
+    <figure class="col-sm-3">
+       <%= image_tag("Swimming-icon.png") %>
+       <figcaption>Yay, swimming too ;)</figcaption>
+    </figure>
+    <figure class="col-sm-3">
+       <%= image_tag("RubyOnRails.png") %>
+       <figcaption>Oh, RoR, yesss...</figcaption>
+    </figure>
+    <figure class="col-sm-3">
+       <%= image_tag("web-design.png") %>
+       <figcaption>Mmmm, Web Design</figcaption>
+    </figure>
+  </div>
+
+</div>
+    
+    <h1> EDUCATION </h1>
+    <hr>
+      <div class="specialize">
+        <div class="window-tint">
+          <div class="promo-text"> <span>B.S. in Business Administration</span><br> <strong>Finance Major</strong> 
+            <%= link_to "Contact", root_path, class: 'window-cta' %>
+          </div>
+        </div>
+      </div>
+
+    </article>
+  </section>
+<footer>
+  <div class="row footer-stuff">
+    <div class="col-md-5">
+      <ul>
+        <li>Twitter</li>
+        <li>Facebook </li>
+        <li>LinkIn</li>
+        <li>Instragram</li> 
+    </div>
+    <div class="col-md-5">
+      <p><strong>Sign Up for the newsletter</strong></p>
+      <%= simple_form_for @visitor, url: new_visitor_path(@visitor) do |f| %>
+      <%= f.error_notification %>
+      <%= f.input :email, label: false, :placeholder => 'Your email address...' %>
+      <%= f.button :submit, "Sign up for the newsletter", :class => "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+
+</footer>

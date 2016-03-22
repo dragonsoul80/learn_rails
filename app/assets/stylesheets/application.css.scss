@@ -1,6 +1,10 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
-@import "custom.css.scss"
+@import "font-awesome.min.css.scss";
+@import "animate.min.css.scss";
+@import "custom.css.scss";
+
+
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -17,4 +21,5 @@
  *= require_self
  *= require bootstrap
  *= require bootstrap_responsive
+ 
  */

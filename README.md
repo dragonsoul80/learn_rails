@@ -62,3 +62,13 @@ add debugger next to any line of code to track down the bug.
 
 * Simple Form and Zurb Foundation inline forms:
 https://victorbueno.wordpress.com/2014/01/24/simple-form-and-zurb-foundation-inline-forms/
+
+* Fixed the problem of Bootstrap brand logo not align well with the right hand link
+.navbar-brand > img{
+  display: block;
+  width: 160px;
+}
+
+.navbar-brand {
+  padding: 0px;
+}
