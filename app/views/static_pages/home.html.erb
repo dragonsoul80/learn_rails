@@ -130,7 +130,7 @@
     </div>
     <div class="col-md-5">
       <p><strong>Sign Up for the newsletter</strong></p>
-      <%= simple_form_for @visitor, url: new_visitor_path(@visitor) do |f| %>
+      <%= simple_form_for @visitor, url: visitors_path(@visitor) do |f| %>
       <%= f.error_notification %>
       <%= f.input :email, label: false, :placeholder => 'Your email address...' %>
       <%= f.button :submit, "Sign up for the newsletter", :class => "btn btn-primary" %>
