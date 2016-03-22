@@ -15,7 +15,7 @@ class VisitorsController < ApplicationController
 			flash[:notice] = "Signed up #{@visitor.email}."
 			redirect_to root_path
 		else
-			render 'static-pages/home'
+			render 'static_pages/home'
 		end
 	end
 
