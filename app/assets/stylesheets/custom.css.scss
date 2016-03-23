@@ -17,7 +17,7 @@ figure {
   position: relative;
   z-index: 2;
   background: white;
-  margin-bottom: 300px;
+  margin-bottom: 400px;
 
   article {
     padding: 100px 0;
@@ -44,7 +44,6 @@ img {
   z-index: 3;
 }
 
-
  .logo {
  height: 100px;
  width: 100%;
@@ -68,56 +67,6 @@ img {
   right: 100%;
   margin-right: -500px;
   top: 600px;
-}
-
-/* Interest Grid */
-
-.interest {
-  margin-bottom: 100px;
-  margin-top: 100px;
-
-  figure{
-    margin-bottom: 20px;
-    padding-left: 0px;
-    position: relative;
-    opacity: 0;
-    transform: translateX(20px);
-    transition: all 0.7s ease-in-out;
-    overflow: hidden;
-    cursor: pointer;
-  
-    &.is-showing{
-      opacity: 1;
-      transform: translateX(0px);
-    }
-
-    img {
-    display: block;
-    transform: scale(1);
-    transition: all 0.3s ease-in-out;
-    }
-
-    &:hover{
-      figcaption{
-        left: 0%;
-      }
-
-      img{
-      transform: scale(1.1);
-      }
-    }
-  }
-
-  figcaption{
-  position: absolute;
-  bottom: 10px;
-  left: -100%;
-  background: black;
-  color: white;
-  padding: 2px 8px;
-  font-size: 11px;
-  transition: all 0.3s ease-in-out;
-  }
 }
 
 /* Animated Skills progress bar with CSS3 */
@@ -194,6 +143,87 @@ width:110px;
   color:rgba(0, 0, 0, 0.4);
 }
 
+/* Portfolio */
+
+.portfolio-posts {
+  margin-top: 100px;
+
+  div{
+    border: 1px solid #e1e1e1;
+    padding: 20px 20px 0;
+    background: white;
+    position: relative;
+    left: 40px;
+  }
+  .post-1{
+    transform: translate (100px, 20px);
+
+  }
+  .post-2{
+    z-index: 2;
+    margin-left: 50px;
+
+  }
+  .post-3{
+    transform: translate (-100px, 20px);
+    margin-left: 50px;
+
+  }
+}
+
+
+/* Interest Grid */
+
+.interest {
+  margin-bottom: 100px;
+  margin-top: 100px;
+
+  figure{
+    margin-bottom: 20px;
+    padding-left: 0px;
+    position: relative;
+    opacity: 0;
+    transform: translateX(30px);
+    transition: all 0.7s ease-in-out;
+    overflow: hidden;
+    cursor: pointer;
+
+    &.is-showing{
+      opacity: 1;
+      transform: translateX(0px);
+    }
+
+    img {
+    display: block;
+    transform: scale(1);
+    transition: all 0.3s ease-in-out;
+    }
+
+    &:hover{
+      figcaption{
+        left: 0%;
+      }
+
+      img{
+      transform: scale(1.1);
+      }
+    }
+  }
+
+  figcaption{
+  position: absolute;
+  bottom: 10px;
+  left: -100%;
+  background: black;
+  color: white;
+  padding: 2px 8px;
+  font-size: 11px;
+  transition: all 0.3s ease-in-out;
+  }
+}
+
+
+
 /* The Periscope */
 
 .specialize{
@@ -256,30 +286,6 @@ width:110px;
   }
 }
 
-/* Portfolio */
-
-.portfolio-posts {
-  margin-top: 100px;
-
-  div{
-    border: 1px solid #e1e1e1;
-    padding: 20px 20px 0;
-    background: white;
-    position: relative;
-  }
-  .post-1{
-    transform: translate (100px, 20px);
-
-  }
-  .post-2{
-    z-index: 2;
-    margin-left: 50px;
-  }
-  .post-3{
-    transform: translate (-100px, 20px);
-    margin-left: 50px;
-  }
-}
 
 /* Footer */
 
@@ -299,4 +305,15 @@ footer{
   a{
     color: white;
   }
+}
+
+/* Contact */
+.contact-form{
+  margin-top: 100px;
+  font-weight: 100;
+      div{
+      padding: 5px;
+      background-color: rgba(2, 2, 2, 0.5);
+      color: white;
+    }
 }

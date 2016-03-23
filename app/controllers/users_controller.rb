@@ -1,5 +1,9 @@
 class UsersController < ApplicationController
 
+  def action
+    render :layout => 'header'
+  end
+
   def show
     @user = User.find(params[:id])
     

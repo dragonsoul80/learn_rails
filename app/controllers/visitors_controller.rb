@@ -4,10 +4,6 @@ class VisitorsController < ApplicationController
 		@visitor = Visitor.new
 	end
 
-	def index
-		@visitors = Visitor.all
-	end
-
 	def create
 		@visitor = Visitor.new(secure_params)
 		if @visitor.valid?

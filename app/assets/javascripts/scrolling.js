@@ -11,7 +11,7 @@ $(document).ready(function() {
         $('.fore-logo').css({
             'transform' : 'translate(0px, -'+wScroll /7 +'%)'
         });
-        
+
         // Add effect to each portfolio pic
         if(wScroll > $('.interest').offset().top - ($(window).height() /1.2) ) {
 
@@ -20,9 +20,9 @@ $(document).ready(function() {
                 setTimeout(function(){
                 $('.interest figure').eq(i).addClass('is-showing');
             }, 150 * (i+1));
-            
+
         });
-         
+
         }
 
         if(wScroll > $('.specialize').offset().top - $(window).height()){
@@ -35,7 +35,7 @@ $(document).ready(function() {
 
         if(wScroll > $('.portfolio-posts').offset().top - $(window).height()){
 
-            var offset = Math.min(0, wScroll - $('.portfolio-posts').offset().top 
+            var offset = Math.min(0, wScroll - $('.portfolio-posts').offset().top
             +$(window).height() - 600);
 
             $('.post-1').css({'transform': 'translate('+ offset + 'px,' + Math.abs(offset * 0.2) + 'px)'});
@@ -52,5 +52,19 @@ $(document).ready(function() {
             width:$(this).attr('data-percent')
         },6000);
     });
+
+// Smooth Scrolling
+    $('a[href*="#"]:not([href="#"])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        $('html, body').animate({
+          scrollTop: target.offset().top
+        }, 1000);
+        return false;
+      }
+    }
+  });
 
 });
