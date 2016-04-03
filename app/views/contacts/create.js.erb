@@ -1,0 +1,7 @@
+<% if @contact.errors.blank? %>
+  $('#myModal').modal('hide');
+  $('.modal-body').append('<%= j render "form", contact: @contact %>');
+<% else %>
+  // TODO: show the errors in the UI
+  alert('Algo falló');
+<% end %>

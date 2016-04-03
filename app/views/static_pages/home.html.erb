@@ -56,9 +56,11 @@
     </div> <!-- End Skill Bar -->
 
     <div class="row portfolio-posts">
-      <h1> PORTFOLIO </h1>
-      <hr>
-        <div class="col-md-3 post-1">
+
+          <h1> PORTFOLIO </h1>
+          <hr>
+
+        <div class="col-md-3 post-1  col-md-offset-1">
           <h5>Database Development </h5>
           <%= image_tag('network-database-icons.png') %>
           <p> Create database management program with MS Access.</p>
@@ -73,9 +75,10 @@
         </div>
 
         <div class="col-md-3 post-3">
-          <h5>Financial Modeling </h5>
+          <h5>Financial <br> Modeling </h5>
           <%= image_tag('financial-growth-icon.jpg') %>
-          <br><br>
+<br>
+<br>
           <p>Utilize MS Excel functions and tools for financial modeling.</p>
           <%= link_to "Explore More", root_path, class: 'btn btn-secondary btn-sm' %>
         </div>
@@ -85,20 +88,20 @@
     <div class="row interest">
         <h1>INTERESTS & HOBBY</h1>
         <hr>
-        <figure class="col-sm-3">
+        <figure class="col-md-3">
           <br>
            <%= image_tag("travel-icon.png") %>
            <figcaption>Yes, I love to travel</figcaption>
         </figure>
-        <figure class="col-sm-3">
+        <figure class="col-md-3">
            <%= image_tag("Swimming-icon.png") %>
            <figcaption>Yay, swimming too ;)</figcaption>
         </figure>
-        <figure class="col-sm-3">
+        <figure class="col-md-3">
            <%= image_tag("RubyOnRails.png") %>
            <figcaption>Oh, RoR, yesss...</figcaption>
         </figure>
-        <figure class="col-sm-3">
+        <figure class="col-md-3">
           <br>
            <%= image_tag("web-design.png") %>
            <figcaption>Mmmm, Web Design</figcaption>
@@ -112,46 +115,10 @@
       <div class="specialize">
         <div class="window-tint">
           <div class="promo-text"> <span>B.S. in Business Administration</span><br> <strong>Finance Major</strong>
-            <%= link_to "Contact", "#contact", class: 'window-cta' %>
+            <%= link_to "Contact", new_contact_path, remote: true, class: 'window-cta', "data-toggle" => "modal", "data-target" => "#myModal" %>
           </div>
         </div>
       </div>
-      <div class="row contact-form" id="contact">
-        <h1> CONTACT ME </h1>
-        <hr>
-        <div class="col-md-6 col-md-offset-3">
-          <div class="panel panel-primary">
-            <h4>Let's work together.</h4>
-          	<hr>
-          	<%= simple_form_for @contact do |f| %>
-          		<%= f.input :name, autofocus:true, class: 'form-control' %>
-          		<%= f.input :email, class: 'form-control' %>
-          		<%= f.input :content, as: :text, class: 'form-control' %>
-          		<%= f.button :submit, 'Send', class: 'btn btn-primary' %>
-          	<% end %>
-          </div>
-        </div>
-      </div>
+
   </article>
 </section>
-
-<footer>
-  <div class="row footer-stuff">
-    <div class="col-md-5">
-      <ul>
-        <li>Twitter</li>
-        <li>Facebook </li>
-        <li>LinkIn</li>
-        <li>Instragram</li>
-    </div>
-    <div class="col-md-5">
-      <p><strong>Sign Up for the newsletter</strong></p>
-      <%= simple_form_for @visitor do |f| %>
-      <%= f.error_notification %>
-      <%= f.input :email, label: false, :placeholder => 'Your email address...' %>
-      <%= f.button :submit, "Sign up", :class => "btn btn-primary" %>
-      <% end %>
-    </div>
-  </div>
-
-</footer>

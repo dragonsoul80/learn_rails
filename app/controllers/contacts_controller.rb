@@ -9,8 +9,7 @@ def create
 	if @contact.valid?
 		@contact.update_spreadsheet
 		UserMailer.contact_email(@contact).deliver
-		flash[:notice] = "Message sent from #{@contact.name}."
-		redirect_to root_path
+		redirect_to({ action: 'new' }, notice: "Thanks #{params[:contact][:name]} for your message.")
 	else
 		render :new
 	end

@@ -2,7 +2,7 @@ require "google/api_client"
 require "google_drive"
 
 class Contact < ActiveRecord::Base
-	
+
 	has_no_table
 	attr_accessor :name, :string
 	attr_accessor :email, :string
@@ -16,15 +16,15 @@ class Contact < ActiveRecord::Base
 	#client ID: 921946829572-a3apsi5ao7stio091i1h8rbf09a3hu4b.apps.googleusercontent.com
 	#client secret MlVS7wOd3UjYMp5PCiM4rGm9
 	# Authorizes with OAuth and gets an access token.
-	
+
 	def update_spreadsheet
 		#https://github.com/gimite/google-drive-ruby
 		# solved the openssl problem: http://railsapps.github.io/openssl-certificate-verify-failed.html
-		
+
 		@client = Google::APIClient.new(application_name: 'Learn_Rails', application_version: '0.0.1')
 		key = Google::APIClient::KeyUtils.load_from_pkcs12(ENV['GOOGLE_P12_PATH'], ENV['GOOGLE_P12_PASS'])
 		#https://github.com/gimite/google-drive-ruby/issues/126#issuecomment-73542381
-		#Share your sheets with the Client ID email of the service account ('someeailuser@developer.gserviceaccount.com'). 
+		#Share your sheets with the Client ID email of the service account ('someeailuser@developer.gserviceaccount.com').
 		#Otherwise you won't be able to access anything even though you have a valid token.
 		asserter = Google::APIClient::JWTAsserter.new( ENV['GOOGLE_SERVICE_EMAIL'],
     		['https://docs.google.com/feeds/',
@@ -33,7 +33,7 @@ class Contact < ActiveRecord::Base
     		key
 			)
 		@client.authorization = asserter.authorize
-		
+
 		@connection = GoogleDrive.login_with_oauth(@client.authorization.access_token)
 		ss = @connection.spreadsheet_by_title('Learn_Rails')
 		if ss.nil?

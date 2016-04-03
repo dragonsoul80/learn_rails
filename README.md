@@ -51,9 +51,9 @@ $ bundle exec rake db:migrate
 * fixture has problem with unique
 
 PASSWORD:
-has_secure_password 
+has_secure_password
 - hashed password_digest (Hashed password) attribute to the database
-- password and password_confirmation 
+- password and password_confirmation
 - An authenticate method that returns the user when the password is correct (and false otherwise)
 rails enforce password strength:
 
@@ -72,3 +72,17 @@ https://victorbueno.wordpress.com/2014/01/24/simple-form-and-zurb-foundation-inl
 .navbar-brand {
   padding: 0px;
 }
+
+
+// Render form and show error correctly from other page
+http://stackoverflow.com/questions/16132801/rails-render-form-after-error-in-other-controller
+http://stackoverflow.com/questions/16115644/rails-routes-controllers-views-oh-myexclamation/16116009#16116009
+http://stackoverflow.com/questions/22189862/form-not-displaying-error-messages-for-nested-resource
+http://stackoverflow.com/questions/4603977/passing-error-messages-from-one-controller-to-another
+https://www.krautcomputing.com/blog/2014/03/06/load-remote-rails-links-and-forms-in-bootstrap-modals/
+https://github.com/germanescobar/rails-bootstrap-modal // contact form
+http://stackoverflow.com/questions/1820927/request-monitoring-in-chrome
+http://stackoverflow.com/questions/21520851/rails-after-form-submitted-redirect-to-empty-form-page-again
+http://stackoverflow.com/questions/31251649/getting-modal-to-close-after-submission-rails
+http://stackoverflow.com/questions/12286332/twitter-bootstrap-remote-modal-shows-same-content-everytime
+http://www.whiletrue.it/how-to-update-the-content-of-a-modal-in-twitter-bootstrap/
