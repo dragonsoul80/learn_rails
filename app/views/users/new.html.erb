@@ -2,34 +2,31 @@
 <% content_for :description do %>Website of Toan Tang<% end %>
 
 
-<div class="row">
-  <div class = "col-md-7"></div>
-   <div class="col-md-3">
-      <h2 class="welcome"> Welcome to this awesome app!</h2>
-
-        <%= simple_form_for(@user, html: {class: 'form-horizontal'}) do |f| %>
-
-          <div class = "row">
-            <div class="col-md-6">
-              <%= f.input :first_name, placeholder: "First Name", autofocus:true, label:false %>
-            </div>
-            <div class="col-md-6">
-              <%= f.input :last_name, placeholder: "Last Name", label: false %>
-            </div>
+<div class="row signup">
+   <div class="col-md-7">
+      <h1 class="welcome"> Welcome to My First RoR App!</h1>
+   </div>
+   <div class="col-md-4">
+      <%= simple_form_for(@user, html: {class: 'form-horizontal'}) do |f| %>
+        <div class = "row">
+          <div class="col-md-6">
+            <%= f.input :first_name, placeholder: "First Name", autofocus:true, label:false %>
           </div>
-            <div class ="row">
-              <div class ="col-md-12">
+          <div class="col-md-6">
+            <%= f.input :last_name, placeholder: "Last Name", label: false %>
+          </div>
+        </div>
+          <div class ="row">
+            <div class ="col-md-12">
               <%= f.input :email, placeholder: "Email", label:false%>
               <%= f.input :password, placeholder: "Password", label: false %>
               <%= f.input :password_confirmation, placeholder: "Password Confirmation", label: false %>
               <%= f.button :submit, "Create my account", class: "btn btn-primary form-actions" %>
-
-        <% end %>
-              </div>
+      <% end %>
             </div>
-              <h2>Already have an account? <a href="#">Login here &raquo</a></h2>
+          </div>
+              <h2>Already have an account? <%= link_to "Login here >>", login_path %></h2>
     </div>
-    
+    <div class="col-md-1">
+    </div>
 </div>
-  
- 

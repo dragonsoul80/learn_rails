@@ -13,6 +13,8 @@ gem 'jquery-turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem "font-awesome-rails"
+gem 'will_paginate',           '3.0.7'
+gem 'bootstrap-will_paginate', '0.0.10'
 # fix the uninitialized constant Sprockets::SassCacheStore Error on Windows
 gem 'compass-rails'
 gem 'sprockets-rails'
