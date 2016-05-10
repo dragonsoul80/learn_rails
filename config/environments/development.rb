@@ -25,7 +25,7 @@ Rails.application.configure do
   # Debug mode disables concatenation and preprocessing of assets.
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.
-  # change security setting. this link is hidden: https://www.google.com/settings/security/lesssecureapps 
+  # change security setting. this link is hidden: https://www.google.com/settings/security/lesssecureapps
   config.assets.debug = true
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.default_url_options = { :host => "localhost:3000" }
@@ -38,6 +38,7 @@ Rails.application.configure do
   user_name: ENV["GMAIL_USERNAME"],
   password: ENV["GMAIL_PASSWORD"]
 }
+
 # Send email in development mode.
   config.action_mailer.perform_deliveries = true
 
@@ -53,5 +54,5 @@ Rails.application.configure do
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
   OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE
- 
+
 end

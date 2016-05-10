@@ -8,7 +8,9 @@ LearnRails::Application.routes.draw do
   resources :contacts, only: [:new, :create]
 	resources :visitors, only: [:new, :create]
   resources :users
+  resources :account_activations, only: [:edit]
 	root to: 'static_pages#home'
+
 
 
 end

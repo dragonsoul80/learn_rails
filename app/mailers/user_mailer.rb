@@ -1,12 +1,23 @@
-class UserMailer < ActionMailer::Base #ApplicationMailer
-	default from: "do-not-reply@example.com"
+class UserMailer < ApplicationMailer
 
-	
-# to solve problem when cant receive email from app.
-#http://stackoverflow.com/questions/18124878/netsmtpauthenticationerror-when-sending-email-from-rails-app-on-staging-envir
+  # Subject can be set in your I18n file at config/locales/en.yml
+  # with the following lookup:
+  #
+  #   en.user_mailer.account_activation.subject
+  #
+  def account_activation(user)
+    @user = user
+    mail to: user.email, subject: "Account activation"
+  end
 
-	def contact_email(contact)
-		@contact = contact
-		mail(to: ENV["OWNER_EMAIL"], from: @contact.email, :subject => "Website Contact")
-	end
+  # Subject can be set in your I18n file at config/locales/en.yml
+  # with the following lookup:
+  #
+  #   en.user_mailer.password_reset.subject
+  #
+  def password_reset
+    @greeting = "Hi"
+
+    mail to: "to@example.org"
+  end
 end
