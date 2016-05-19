@@ -1,4 +1,8 @@
 LearnRails::Application.routes.draw do
+  get 'password_reset/new'
+
+  get 'password_reset/edit'
+
   	get    'login' => 'sessions#new'
   	post   'login' => 'sessions#create'
   	delete 'logout' => 'sessions#destroy'
@@ -9,6 +13,7 @@ LearnRails::Application.routes.draw do
 	resources :visitors, only: [:new, :create]
   resources :users
   resources :account_activations, only: [:edit]
+  resources :password_resets, only: [:new, :create, :edit, :update]
 	root to: 'static_pages#home'
 
 
