@@ -72,7 +72,7 @@ https://victorbueno.wordpress.com/2014/01/24/simple-form-and-zurb-foundation-inl
 .navbar-brand {
   padding: 0px;
 }
-
+change
 
 // Render form and show error correctly from other page
 http://stackoverflow.com/questions/16132801/rails-render-form-after-error-in-other-controller
