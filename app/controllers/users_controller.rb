@@ -10,7 +10,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-
+    @microposts = @user.microposts.paginate(page: params[:page])
   end
 
  def new
@@ -35,10 +35,10 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update_attributes(user_params)
-    flash[:success] = "Profile updated"
-    redirect_to @user
+      flash[:success] = "Profile updated"
+      redirect_to @user
     else
-    render 'edit'
+      render 'edit'
     end
   end
 
@@ -56,15 +56,6 @@ class UsersController < ApplicationController
 
   # Before filters
 
- # Confirms a logged-in user.
- def logged_in_user
-   unless logged_in?
-     store_location
-     flash[:danger] = "Please log in."
-     redirect_to login_url
-   end
- end
-
  # Confirms the correct user.
   def correct_user
     @user = User.find(params[:id])
@@ -74,4 +65,5 @@ class UsersController < ApplicationController
   def admin_user
      redirect_to(root_url) unless current_user.admin?
   end
+  
 end

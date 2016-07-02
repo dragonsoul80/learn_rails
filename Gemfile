@@ -16,6 +16,10 @@ gem "font-awesome-rails"
 gem 'will_paginate',           '3.0.7'
 gem 'bootstrap-will_paginate', '0.0.10'
 gem 'faker', '1.4.2'
+gem 'carrierwave',             '0.11.2'
+gem 'mini_magick',             '4.5.1'
+gem 'fog',                     '1.38.0'
+
 # fix the uninitialized constant Sprockets::SassCacheStore Error on Windows
 gem 'compass-rails'
 gem 'sprockets-rails'
